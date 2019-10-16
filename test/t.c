@@ -5,18 +5,14 @@
 #define N 5
 #define MAX_LEN 1024
 int main(int argc, char *argv[]) {
-	char** arr = NULL; //Объявление пустого массива указателей на указатели (строки) char*
-	arr = (char**)malloc(sizeof(char*)*N); /*Динамическое выделение количества памяти, равного количеству байт,
-	занимаемых массивом arr, а также размерности массива*/
-	char buf[MAX_LEN];
-	for (int i = 0; i < N; i++) {
-		arr[i] = (char*)malloc(sizeof(char)*strlen(buf));
-		printf("%d: ", i+1);
-		fgets(arr[i], MAX_LEN, stdin);
-		fflush(stdin);
-		strcpy(buf, arr[i]);
-	}
-	for (int i=0; i < N; i++)
-		printf("\n%d: %s", i+1, arr[i]);
+	int** arr = NULL;
+	int sto, str;
+	printf("Введите количество столбцов: ");
+	scanf("%d%*c", &sto);
+	printf("Введите количество строк: ");
+	scanf("%d%*c", &str);
+	for (unsigned i=0; i<sto; i++)
+		for (unsigned j=0; i<str; i++)
+			arr[i][j] = (int **)calloc()
 	return 0;
 }
